@@ -1,0 +1,388 @@
+.benefitsbody{
+    padding-top: 100px;
+    display: grid;
+    grid-template-rows: 100px 400px 100px 70px;
+    grid-template-columns: repeat(3,minmax(300px, 1fr));
+    height: 900px;
+    background: rgba(68, 10, 103, 0.03);
+    align-items: center;
+}
+
+.benefits-title{
+    padding-top: 30px;
+    font-size: 68px;
+    text-align: center;
+    font-weight: 600;
+    color: #251A2B;
+    opacity: 1;
+    grid-column: 1 / 4;
+    transition: 0.5s;
+}
+
+.benefits-content{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.benefitsbody h2{
+    font-size: 35px;
+    width: 330px;
+    color: #251A2B;
+    font-weight: 680;
+    letter-spacing: -0.015em;
+    text-align: center;
+    margin: 10px 78px;
+    grid-row: 3;
+}
+
+.benefit-circle{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background: rgba(68, 10, 103, 0.11);
+    margin: 20px 73px;
+    transition: 1s;
+    grid-row: 2;
+}
+
+
+.inner-circle{
+    position: relative;
+    height: 307px;
+    width: 307px;
+    border-radius: 50%;
+    background: rgba(68, 10, 103, 0.11);
+    left: 22px;
+    top: 22px;
+}
+
+.inner-image{
+    position: relative;
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    left: 24px;
+    top: 24px;
+    background: wheat;
+}
+
+.know-more{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 170px;
+    height: 40px;
+    width: 150px;
+    background: rgba(68, 10, 103, 0.4);
+    border-radius: 42px;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    /* z-index: 1; */
+    grid-row: 4;
+}
+
+.know-more:hover{
+    z-index: 3;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.know-more:hover ~ .know-more{
+    opacity: 0;
+}
+
+.know-more:hover ~ h2{
+    opacity: 0;
+}
+
+#student-ellipse{
+    background-image: url("../assets/Student Ellipse.jpg");
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+#college-ellipse{
+    background-image: url("../assets/College Ellipse.png");
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+#company-ellipse{
+    background-image: url("../assets/Company Ellipse.png");
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+#student-content{
+    position: absolute;
+    box-sizing: border-box;
+    width: 850px;
+    height: 650px;
+    border-radius: 50px;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 30px;
+    background: rgba(255, 10, 103,0.0);
+    transition: 1s;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1;
+    transform: scale(0.5);
+    transition: all 0.5s;
+    padding-left: 20%;
+}
+
+#company-content{
+    position: absolute;
+    box-sizing: border-box;
+    width: 850px;
+    height: 650px;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 30px;
+    background: rgba(68, 10, 103, 0.0);
+    transition: 1s;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1;
+    transform: translate(-65%,0%) scale(0.5);
+    transition: all 0.5s;
+    padding-left: 20%;
+}
+
+#college-content{
+    position: absolute;
+    box-sizing: border-box;
+    width: 850px;
+    height: 650px;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 30px;
+    background: rgba(68, 10, 103, 0.0);
+    transition: 1s;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1;
+    transform: translateX(-130%) scale(0.5);
+    transition: all 0.5s;
+    padding-left: 20%;
+}
+
+
+#know-more-1:hover ~ #benefit-circle-1 #student-ellipse{
+    transition: all 0.5s;
+    transform: translateX(-40%) scale(3);
+}
+
+#know-more-1:hover ~ #benefit-circle-1 #student-content{
+    transition: all 0.5s;
+    transform: translate(55%,-20%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+#know-more-1:hover ~ .benefits-title{
+    transition: 1s;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+#know-more-1:hover ~ #benefit-circle-2{
+    opacity: 0;
+}
+
+#know-more-1:hover ~ #benefit-circle-3{
+    opacity: 0;
+}
+
+
+#know-more-2:hover ~ #benefit-circle-2 #company-ellipse{
+    transition: all 0.5s;
+    transform: translateX(-210%) scale(3);
+}
+
+#know-more-2:hover ~ #benefit-circle-2 #company-content{
+    transition: all 0.5s;
+    transform: translate(4%,-20%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+#know-more-2:hover ~ .benefits-title{
+    transition: 1s;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+#know-more-3:hover ~ #benefit-circle-3 #college-ellipse{
+    transition: all 0.5s;
+    transform: translateX(-380%) scale(3);
+}
+
+#know-more-3:hover ~ #benefit-circle-3 #college-content{
+    transition: all 0.5s;
+    transform: translate(-46%,-20%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+#know-more-2:hover ~ #benefit-circle-2{
+    background: rgba(68, 10, 103, 0);
+}
+#know-more-2:hover ~ #benefit-circle-2 .inner-circle{
+    background: rgba(68, 10, 103, 0);
+}
+
+#know-more-2:hover ~ #benefit-circle-3{
+    opacity: 0;
+}
+
+#know-more-3:hover ~ .benefits-title{
+    transition: 1s;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+#know-more-3:hover ~ #benefit-circle-3{
+    background: rgba(68, 10, 103, 0);
+}
+#know-more-3:hover ~ #benefit-circle-3 .inner-circle{
+    background: rgba(68, 10, 103, 0);
+}
+
+#know-more-3:hover ~ #benefit-circle-2{
+    opacity: 0;
+}
+
+#student-title,#company-title,#college-title{
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: start;
+}
+
+#student-content > p{
+    position: relative;
+    font-size: 17px;
+    text-align: start;
+}
+
+#college-content > p{
+    position: relative;
+    font-size: 17px;
+    text-align: start;
+}
+
+#company-content > p{
+    position: relative;
+    font-size: 17px;
+    text-align: start;
+}
+
+.content-feature{
+    margin-top: 100px;
+    font-size: 15px;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    text-align: start;
+}
+
+#student-1-img{
+    background: url("../assets/student-1.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#student-2-img{
+    background: url("../assets/student-2.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#student-3-img{
+    background: url("../assets/student-3.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#company-1-img{
+    background: url("../assets/company-1.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#company-2-img{
+    background: url("../assets/company-2.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#company-5-img{
+    background: url("../assets/company-5.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#college-5-img{
+    background: url("../assets/college-5.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+#college-6-img{
+    background: url("../assets/college-6.png");
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+@media all and (max-width:1200px){
+    .benefitsbody{
+        padding-top: 100px;
+        display: grid;
+        grid-template-rows: 100px 400px 100px 70px;
+        grid-template-columns: repeat(2, minmax(360px, 1fr));
+        height: 900px;
+        background: rgba(68, 10, 103, 0.03);
+        align-items: center;
+    }
+}

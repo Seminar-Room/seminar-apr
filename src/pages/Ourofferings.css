@@ -1,0 +1,155 @@
+.ourofferingsbody{
+    overflow: hidden;
+    width: 100%;
+    height: 1000px;
+    background-color:  white;
+    background-image: url("../assets/ourofferings.png");
+    background-repeat: no-repeat;
+    background-position: top ,top;
+    background-size:contain;
+     
+     
+}
+
+ 
+.title{
+    font-family: 'BhuTuka Expanded One', cursive;
+    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 73px;
+    text-align: center;
+    letter-spacing: -0.13005px;
+    margin-top: 80px;
+    color: white; 
+}
+.paragraph{
+    width: 440px;
+    margin-left: 490px;
+    font-family: 'BhuTuka Expanded One', cursive;
+    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -0.13005px;
+    margin-top: 30px;
+    line-height: 23px;
+    color: white; 
+}
+section:hover .card{
+    height: 610px;
+    background-image: linear-gradient(90deg ,white  40%, rgb(158, 127, 152));
+}
+ 
+section:hover .content{
+    width: 260px;
+}
+section:hover .parttwo{
+    margin-left: 30px;
+}
+.card{
+    height: 500px; 
+    width: 620px; 
+     margin-top: 370px;
+     margin-left: 30px;
+    background-color: white;
+    border-radius: 20px;
+    transition: all 0.7s;
+    overflow: hidden;
+    box-shadow: 4px 4px 8px rgb(159, 123, 159);
+   
+}
+ 
+.holder{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+     flex-direction:row;
+     height: 700px;
+}
+@media all and (max-width :1200px){
+    .holder{
+        flex-direction: column;
+        height: 1500px;
+    }
+    .ourofferingsbody{
+        height: 1600px;
+    }
+    .card{
+        margin-top: 30px;
+    }
+}
+.icon1{
+    height: 60px; 
+    width: 60px;
+     left: 40px;
+     top:40px ;
+}
+.name{
+    margin-top: 48px;
+    margin-left: 40px;
+    width: 350px;
+    font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 550;
+font-size: 30px;
+line-height: 49px;
+/* or 123% */
+
+
+/* Gray/900 */
+
+color: #061C3D;
+}
+.btnone{
+    height: 45px ;
+    width: 150px;
+    border: none;
+    border-radius: 30px;
+    background-color: #440A67;
+    color: white;
+    margin-left: 40px ;
+    margin-top: 20px;
+}
+.content{
+    width: 550px;
+    margin: 40px;
+
+    font-family: 'Avenir';
+font-style: normal;
+font-weight: 400;
+font-size: 19px;
+line-height: 27px;
+color: #42526B;
+     
+    
+}
+.parts{
+    display: flex;
+    flex-direction: row ;
+}
+.parttwo{
+    font-family: 'Avenir';
+    font-style: normal;
+    width: 400px;
+    margin: 30px;
+    margin-top: 90px;
+    font-style: normal;
+    font-weight: 400;
+ 
+    line-height: 27px;
+    color: #42526B;
+    margin-left: 60px;
+    transition: all 0.7s;
+ 
+}
+.featurestitle{
+    font-size: 20px;
+    color: #440A67 ;
+}
+.list{
+    margin-top: 10px;
+    
+}

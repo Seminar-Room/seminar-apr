@@ -1,0 +1,131 @@
+.wrapper{
+  width: 100%;
+  height: 750px;
+}
+.carousal{
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+.slick-arrow slick-prev{
+  background-color: blue;
+}
+.cards{
+  height: 440px;
+  width: 100px;
+  border-radius: 10px;
+  
+  background-color: white;
+  box-shadow: 5px 5px 10px grey;
+  
+}
+.slick-slide div{
+   margin: 30px;
+   margin-left: 20px;
+  
+}
+.slick-prev:before{
+  font-size: 50px;
+  color: #440A67;
+  height: 60px ;
+  width: 60px;
+  margin : -46px
+}
+
+.slick-next:before {
+  font-size: 50px;
+  color: #440A67;
+  height: 60px ;
+  width: 60px;
+  margin: 30px;
+}
+.slick-dots li button:before
+{ 
+  color: #9a61be;
+    font-size: 20px;
+    line-height: 20px;
+    opacity: 100%;
+    margin-left: 30px;
+}
+.slick-dots li.slick-active button:before
+{ 
+  color: #440A67;
+    font-size: 20px;
+    line-height: 20px;
+    opacity: 100%;
+    margin-left: 30px;
+     
+}
+.heading{
+  font-family: 'BhuTuka Expanded One', cursive;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 540;
+font-size: 50px;
+line-height: 73px;
+text-align: center;
+letter-spacing: -0.13005px;
+
+   margin-top: 40px;
+   margin-bottom: 30px;
+
+color: #251A2B;
+}
+.profilepic{
+   
+  height: 110px; 
+  width: 210px;
+  border-radius: 10px;
+  background: rgba(123, 45, 111, 0.56);
+  padding-left: 25px;
+}
+.propic{
+  height: 100px; 
+  width: auto; 
+  margin: 0%;
+  left: 45px;
+  top : 10px ;
+  border-radius: 20px;
+   
+}
+.explorebutton{
+  height: 50px;
+  width: 200px; 
+  background-color:#440A67 ;
+  color: white;
+  margin: 40px;
+  margin-left: 430px ;
+  margin-top: 80px;
+  border: none; 
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: larger;
+}
+.coursen{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: larger;
+  
+}
+.instructor{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:0;
+  font-size: 16px;
+}
+.stars{
+  height: 20px;
+  width: auto;
+  top : -10px;
+  left: 20px;
+}
+.watch{
+  margin-left: 60px;
+  background-color: #440A67 ;
+  color: white;
+  border: none; 
+  border-radius: 30px;
+  height: 40px; ;
+  width: 150px;
+
+}
+ 

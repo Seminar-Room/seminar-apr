@@ -1,0 +1,12 @@
+.entirescroll{
+  position: relative;
+  width: 1920px;
+  height: 7616px;
+  overflow-y: scroll;
+  
+  background: #FFFFFF;
+}
+index.css
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}

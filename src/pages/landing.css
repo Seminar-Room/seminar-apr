@@ -1,0 +1,329 @@
+*{
+    margin : 0 ; 
+     
+}
+.buebox{
+    padding: 20px;
+}
+
+.navbar{
+    height: 100px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background:rgba(123, 45, 111, 0.56);
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+    z-index: 2;
+}
+
+.navbar .logo{
+    position: relative;
+    left:-26%;
+    top: 24%;
+    transform: scale(0.9);
+    height: auto;
+    width: auto;
+}
+.navbar .navbar-links{
+    position: relative;
+    top: -30%;
+    right: -60%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.navbar a{
+    padding-right: 30px;
+    padding-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Avenir';
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+}
+
+.navbar button{
+    height: 55px;
+    width: 160px;
+    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1); */
+    border-color: white;
+    border-radius: 49px;
+    background:white;
+    color: #440A67;
+    font-size: 16px;
+    font-weight: 800;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.first-page{
+    height: 700px;
+    background-image: radial-gradient(#FFD481,#FF29A8,#93329E,#251A2B);
+    background-size: 230% 250%;
+    background-position: 100% 100%;
+    animation-name: gradient-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 8%;
+    padding-top: 2%;
+    align-content: space-evenly;
+}
+
+@keyframes gradient-animation {
+    0%{
+        background-position: 100% 100%;
+    }
+    25%{
+        background-position: 0% 100%;
+    }
+    50%{
+        background-position: 0% 0%;
+    }
+    75%{
+        background-position: 100% 0%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+}
+
+.first-page .main-content{
+    height: 70%;
+    width: 40%;
+    font-size: 590%;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    /* margin-right: 2%; */
+}
+
+.first-page .sign-up-content{
+    background: #FFC916;
+    width: 237px;
+    height: 80px;
+    border-color: #FFC916;
+    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1); */
+    border-radius: 49px;
+    font-size: 18px;
+    color: #93329E;
+    font-weight: 800;
+    margin-top: 8%;
+}
+
+.first-animation{
+    height: 438px;
+    width: 550px;
+    position: relative;
+    left: 8%;
+}
+
+.first-animation .circle-anim{
+    height:450px;
+    width: 450px;
+    border-radius: 50%;
+    background: url("../assets/My Movie 2 2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+.circle-bottom{
+    position: absolute;
+    width: 370px;
+    height: 96px;
+    top: 386px;
+    left: 34px;
+    background-image: url("../assets/circle-bottom.png");
+    background-size: cover;
+    z-index: 2;
+}
+
+.first-animation:hover .circle-anim{
+    transform: translateY(-60px);
+    transition: transform 0.7s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+    /* animation-delay: 0.2s;
+    animation-name: bounce-front;
+    animation-iteration-count: 3;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out; */
+}
+
+
+.first-animation .rect-anim-1{
+    height: 250px;
+    width: 300px;
+    background: #F6F7FB;
+    box-shadow: 0px 2.19758px 10.9879px 2.74697px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    position: absolute;
+    top: 50px;
+    left: -70px;
+    z-index: 0;
+    transition: transform 0.7s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+.rect-anim-1 .red-ball{
+    position: absolute;
+width: 17px;
+height: 17px;
+left: 22.17px;
+top: 17.43px;
+border-radius: 50%;
+background: #F8283D;
+}
+
+.rect-anim-1 .grey-ball{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+left: 47.99px;
+top: 17.43px;
+border-radius: 50%;
+
+background: #D9D9D9;
+}
+
+.rect-anim-1 .grey-rect{
+    position: absolute;
+width: 131.31px;
+height: 6.74px;
+left: 71.56px;
+top: 22.8px;
+
+background: #D9D9D9;
+border-radius: 0.549395px;
+}
+
+.first-animation:hover .rect-anim-1{
+    transform: translate(120px,20px);
+    transition: transform 0.7s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+
+
+.first-animation .rect-anim-2{
+    height: 160px;
+    width: 250px;
+    background: #F6F7FB;
+    box-shadow: 0px 2.19758px 10.9879px 2.74697px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    position: absolute;
+    top: -50px;
+    left: 170px;
+    z-index: 0;
+    transition: transform 0.5s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+.rect-anim-2 .red-ball{
+    position: absolute;
+width: 14px;
+height: 14px;
+left: 22.17px;
+top: 15.43px;
+border-radius: 50%;
+background: #F8283D;
+}
+
+.rect-anim-2 .grey-ball{
+    position: absolute;
+    width: 14px;
+height: 14px;
+left: 42.99px;
+top: 15.43px;
+border-radius: 50%;
+
+background: #D9D9D9;
+}
+
+.rect-anim-2 .grey-rect{
+    position: absolute;
+width: 100.31px;
+height: 6.24px;
+left: 68.56px;
+top: 19.3px;
+
+background: #D9D9D9;
+border-radius: 0.549395px;
+}
+
+.first-animation:hover .rect-anim-2{
+    transform: translate(-70px,50px);
+    transition: transform 0.5s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+.first-animation .rect-anim-3{
+    height: 270px;
+    width: 350px;
+    background: #F6F7FB;
+    box-shadow: 0px 2.19758px 10.9879px 2.74697px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    position: absolute;
+    top: 170px;
+    left: 250px;
+    z-index: 0;
+    transition: transform 0.7s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+.first-animation:hover .rect-anim-3{
+    transform: translate(-200px,-150px);
+    transition: transform 0.7s cubic-bezier(0.68, -0.45, 0.365, 1.55);
+}
+
+
+
+
+.item{
+   height: 70px;   
+}
+.imgs{
+   margin-top: 20px;
+   height: 60px; 
+   width: auto;
+}
+.nitte{
+    margin-top: 30px;
+   
+   height: 50px ;
+   width: auto;
+}
+.naga{
+    margin-top: 20px;
+   height: 70px;
+}
+.alice-carousel{
+
+    height: 190px;
+    background-color: purple;
+    overflow: hidden;
+    
+}
+
+@media all and (max-width:1200px){
+    .first-page{
+        display: block;
+        text-align: center;
+        flex-direction: column;
+    }
+    .first-animation{
+        visibility: hidden;
+    }
+    .first-page .main-content{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width : 70%;
+        box-sizing: border-box;
+    }
+}
