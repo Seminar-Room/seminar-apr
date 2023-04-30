@@ -13,9 +13,13 @@ import kle from '../assets/kle.png'
 import nitte from "../assets/nitte.png" 
 import sage from '../assets/sage.png'
 import naga from '../assets/nagarjuna1.webp'
+import bgvideo from '../assets/bgvideo.mp4'
+import bgposter from '../assets/My Movie 2 2.png'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Landing(){
+    const navigate = useNavigate()
     const responsive = {
         0: { items: 1 },
         256 : {items : 2},
@@ -100,13 +104,13 @@ export default function Landing(){
                 <div className="navbar-links">
                 <a className="about-us">About Us</a>
                 <a className="contact-us">Contact Us</a>
-                <button className="sign-up">Sign Up Now</button>
+                <button className="sign-up" onClick={()=>navigate("/login")}>Sign Up Now</button>
             </div>
             </div>
             <div className="first-page">
             <div className="main-content">
                 Real-life scenarios for real world success<br/>
-                <button className="sign-up-content">Sign Up now</button>
+                <button className="sign-up-content" onClick={()=>navigate("/login")}>Sign Up now</button>
             </div>
             <div className="first-animation">
                 <div className="rect-anim-1">
@@ -120,7 +124,10 @@ export default function Landing(){
                     <div className="grey-rect"></div>
                 </div>
                 <div className="rect-anim-3"></div>
-                <div className="circle-anim"> 
+                <div className="circle-anim">
+                <video id="background-video" autoPlay loop muted poster={bgposter}>
+                    <source src={bgvideo} type="video/mp4"/>
+                </video> 
                 <div className="circle-bottom"></div>
                 </div>
             </div>
