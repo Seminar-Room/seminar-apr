@@ -19,7 +19,7 @@ function App() {
      <Session/>
      <Meetteam/>
      <Testimony/>
-      <ContactUs/>
+     <ContactUs/>
     </>
   )
 }
