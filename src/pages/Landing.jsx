@@ -30,73 +30,7 @@ export default function Landing(){
         1200 : {items: 7}
     };
     
-    const items = [
-        <div className="beubox" data-value="1">
-            <img className="imgs" src={pes} alt="logo"/>
-        </div>,
-        <div className="beubox" data-value="2">
-             <img className="imgs" src={ifim} alt="logo"/>
-        </div>,
-        <div className="beubox" data-value="3">
-             <img className="imgs" src={jainc} alt="logo"/>
-        </div>, 
-        <div className="beubox" data-value="4">
-        <img className="imgs" src={mount} alt="logo"/>
-    </div>, 
-    <div className="beubox" data-value="5">
-             <img className="imgs" src={kle} alt="logo"/>
-        </div>, 
-        <div className="beubox" data-value="5">
-        <img className="nitte" src={nitte} alt="logo"/>
-    </div>, 
-         <div className="beubox" data-value="5">
-             <img className="nitte" src={sage} alt="logo"/>
-        </div>,  
     
-    
-    
-    <div className="beubox" data-value="5">
-             <img className="naga" src={naga} alt="logo"/>
-        </div>,  
-    
-    
-    
-    
-    <div className="beubox" data-value="1">
-    <img className="imgs" src={pes} alt="logo"/>
-    </div>,
-    <div className="beubox" data-value="2">
-     <img className="imgs" src={ifim} alt="logo"/>
-    </div>,
-    <div className="beubox" data-value="3">
-     <img className="imgs" src={jainc} alt="logo"/>
-    </div>, 
-    <div className="beubox" data-value="4">
-    <img className="imgs" src={mount} alt="logo"/>
-    </div>, 
-    <div className="beubox" data-value="5">
-     <img className="imgs" src={kle} alt="logo"/>
-    </div>, 
-    <div className="beubox" data-value="5">
-    <img className="nitte" src={nitte} alt="logo"/>
-    </div>, 
-    <div className="beubox" data-value="5">
-     <img className="nitte" src={sage} alt="logo"/>
-    </div>,  
-    
-    
-    
-    <div className="beubox" data-value="5">
-     <img className="naga" src={naga} alt="logo"/>
-    </div>,  
- 
-    ];
-    
-
-
-
-
-
     return(
         <>
             <div className="navbar">
@@ -104,13 +38,13 @@ export default function Landing(){
                 <div className="navbar-links">
                 <a className="about-us">About Us</a>
                 <a className="contact-us">Contact Us</a>
-                <button className="sign-up" onClick={()=>navigate("/login")}>Sign Up Now</button>
+                <button className="sign-up" onClick={()=>navigate("/dashboard")}>Sign Up Now</button>
             </div>
             </div>
             <div className="first-page">
             <div className="main-content">
                 Real-life scenarios for real world success<br/>
-                <button className="sign-up-content" onClick={()=>navigate("/login")}>Sign Up now</button>
+                <button className="sign-up-content" onClick={()=>navigate("/dashboard")}>Sign Up now</button>
             </div>
             <div className="first-animation">
                 <div className="rect-anim-1">
@@ -133,12 +67,12 @@ export default function Landing(){
             </div>
             </div>
       
-        <AliceCarousel
+        {/* <AliceCarousel
         mouseTracking
         items={items}
         responsive={responsive}
         controlsStrategy="alternate"
-         />
+         /> */}
      
         </>
     )

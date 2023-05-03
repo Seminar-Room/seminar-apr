@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function LoginPage(){
@@ -10,10 +10,11 @@ export default function LoginPage(){
         const data = Object.fromEntries(form.entries())
         fetch("http://localhost:8000/login",{
             method: "POST",
-            body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+            credentials: 'include'
         })
         .then(res=>{
             if(res.status==400){
@@ -22,8 +23,6 @@ export default function LoginPage(){
             else res.json()
             .then((res)=>{
                 if(res.success){
-                    localStorage.setItem("accessToken",res.accessToken)
-                    localStorage.setItem("refreshToken",res.refreshToken)
                     navigate("/dashboard")
                 }
                 else{

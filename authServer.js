@@ -3,24 +3,58 @@ const express = require("express")
 const bcrypt = require("bcrypt")
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
-
-
+const cookieparser = require('cookie-parser')
+const mongoose = require("mongoose")
+ 
 const app = express()
+app.use(cookieparser())
 app.use(express.json())
 app.use(cors({
     origin: 'http://localhost:5173',
-    methods: ['GET','POST','DELETE']
+    credentials:true,
+    methods: ['GET','POST']
 }))
 
 
-let users = [
-    {
-        name: 'Srinidhi',
-        passwd: '$2b$10$/hGVNJlWJOUdOKpqn8hvAu2j4ssw5tm9D.u40c0rtl0GZUrEXGskC'
-    }
-]
+const mongoUrl =
+  "mongodb+srv://tashwinsjprof:5CmzDHToOctChePM@cluster0.vpuvwkf.mongodb.net/?retryWrites=true&w=majority";
 
-let refreshTokens = []
+mongoose
+  .connect(mongoUrl, {
+    useNewUrlParser: true,
+  })
+  .then(() => {
+    console.log("Connected to database");
+  })
+  .catch((e) => console.log(e));
+
+
+const UserDetailsScehma = new mongoose.Schema(
+    {
+      name : String , 
+      password : String  ,
+      token : String
+       
+    },
+    {
+      collection: "UserInfo",
+    }
+  );
+  
+  mongoose.model("UserInfo", UserDetailsScehma);
+  
+  const useme = mongoose.model("UserInfo");
+
+
+const generateAccessToken = (user)=>{
+    const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET,{'expiresIn':'24h'})
+    return accessToken
+}
+
+const findUser = (userName)=>{
+    const user = users.find(user=>user.name==userName)
+    return user
+}
 
 app.post("/signup",async (req,res)=>{
     console.log(req)
@@ -36,39 +70,60 @@ app.post("/signup",async (req,res)=>{
     }
 })
 
-app.post("/login",(req,res)=>{
-    const user = users.find(user=> user.name==req.body.username)
-    if(user==null) res.sendStatus(400).send({success:false}) // is email or username is wrong
-    bcrypt.compare(req.body.password,user.passwd,(err,result)=>{
-        if(err) res.sendStatus(500) // if some error occurs
-        if(result){
-            const accessToken = jwt.sign({name:user.name},process.env.ACCESS_TOKEN_SECRET,{expiresIn : '10m'})
-            const refreshToken = jwt.sign({name:user.name},process.env.REFRESH_TOKEN_SECRET)
-            refreshTokens.push(refreshToken)
-            res.send({success:true,accessToken:accessToken,refreshToken:refreshToken}) // if password is correct
+app.post("/login", async (req,res)=>{
+    
+    const user = await useme.findOne({name: req.body.username });
+    const updatetoken = async (_id ,atoken)=>{
+        try{
+            const res = await useme.updateOne({_id} ,{
+                $set :{token : atoken}
+            })
         }
-        else{
-            res.send({success:false}) // if password is wrong
+        catch(err){
+            console.log(err)
         }
+    }
+
+    // const umber = {name : user.name , password : user.password } ; 
+    if(user==null){
+        res.status(400).send({success:false})
+    }
+    else{
+        const umber = {name : user.name , password : user.password } ;
+        bcrypt.compare(req.body.password,user.password,(err,match)=>{
+            if(err){
+                res.status(500).send("Server Error")
+            }
+        
+            else if(match){
+                const accessToken = generateAccessToken(umber)
+                updatetoken(user._id ,accessToken)
+                res.cookie("accessToken",accessToken,{
+                    httpOnly:true,
+                    expires:new Date(Date.now()+24*60*60*1000),
+                    //secure: true -------------------------> uncomment if we use https
+                })
+                res.send({success:true})
+            }
+            else{
+                res.send({success:false})
+            }
+    }   ) 
+    }
+})
+
+app.get('/user',authenticateToken,(req,res)=>{
+    res.json(req.user)
+})
+
+function authenticateToken(req,res,next){
+    const token = req.cookies.accessToken
+    if(token==null || token=="") return res.sendStatus(401)
+    jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,user)=>{
+        if(err) return res.sendStatus(403)
+        req.user = user.name
+        next()
     })
-})
-
-app.post('/token',(req,res)=>{
-    const refrToken = req.body.token
-    if(refrToken==null) return res.sendStatus(401) // if user doesnt send any refreshToken or he isnt logged in
-    if(!refreshTokens.includes(refrToken)) return res.sendStatus(403) // if refreshToken doesnt exist in Database
-    jwt.verify(refrToken,process.env.REFRESH_TOKEN_SECRET,(err,user)=>{
-        if(err) return res.sendStatus(403) // if refreshToken is invalid
-        const accessToken = jwt.sign({name:user.name},process.env.ACCESS_TOKEN_SECRET,{expiresIn : '60s'})
-        res.json({accessToken : accessToken}) // send new accessToken
-    })
-})
-
-app.delete("/logout",(req,res)=>{
-    const token = req.headers['authentication']
-    // here token has the refreshToken of the user. Remove it from the database
-    res.sendStatus(204)
-})
-
+}
 
 app.listen(8000)
