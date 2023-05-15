@@ -1,6 +1,6 @@
 import "./Whorwe.css" ; 
-import stats from "../assets/div.png" ;
-import hostpic from"../assets/hostpic.png"
+import stats from "../../assets/div.png" ;
+import hostpic from"../../assets/hostpic.png"
 export default function Whorwe(){
     return(
         <>

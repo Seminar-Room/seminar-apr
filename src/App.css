@@ -1,3 +1,6 @@
+*{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
 .division{
   height: 200px; 
   width: 500px; 
