@@ -36,7 +36,7 @@ export default function Landing(){
             <div className="navbar">
                 <img alt="Seminar Room" className="logo" src={logo}/>
                 <div className="navbar-links">
-                <a href="/" className="contact-us">Dashboard</a>
+                <a href="/dashboard" className="contact-us">Dashboard</a>
                 <a href="/" className="about-us">About Us</a>
                 <a href="/" className="contact-us">Contact Us</a>
                 <button className="sign-up" onClick={()=>navigate("/login")}>Join Now</button> 

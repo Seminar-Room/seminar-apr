@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import "./dashboard.css"
 import logo from "../../assets/logo.png"
 import SessionCard from "../sessionCard";
+import { useMessage } from "../../context/message-context";
 
 export default function Dashboard(){
 
     const [sessionList, setSessionList] = useState([]);
+    const [showLogin, setShowLogin] = useState(false);
+    var {displayMessage,setDisplayMessage} = useMessage("");
     var userState = localStorage.getItem("userState") ? localStorage.getItem("userState") : null;
     var accessToken = localStorage.getItem("accessToken") ? localStorage.getItem("accessToken") : null;
     
     useEffect(() => {
+        setDisplayMessage("Loading Available Sessions...")
          async function fetchSessions(){
             var response = await fetch("http://localhost:5000/api/get-sessions", {
                 method: "POST",
@@ -20,7 +24,14 @@ export default function Dashboard(){
             }).then(result => result.json())
             
             if(response.success === true){
+                setShowLogin(false);
                 setSessionList(response.data)
+            }else{
+                setSessionList([]);
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("userState");
+                setShowLogin(true);
+                setDisplayMessage(response.message)
             }
         }
         fetchSessions();
@@ -49,7 +60,7 @@ export default function Dashboard(){
                                 })) : (<div style={{display: 'flex', justifyContent: 'center'}}>
                                 <div className="alert alert-info">
                                     <div className="alert-message information" style={{textAlign: 'center'}}>
-                                        <div>You need to login to access this content.</div>
+                                        <div>Please login to access this content.</div>
                                         <a href="/login" className="login-redirect">Click here</a> to login.
                                     </div>
                                 </div>
@@ -59,7 +70,10 @@ export default function Dashboard(){
                 ) : (
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <div className="alert alert-info">
-                            <div className="alert-message information">Loading Available Sessions...</div>
+                            <div className="alert-message information" style={{textAlign: 'center'}}>
+                                <div>{displayMessage}</div>
+                                {showLogin ? (<div><a href="/login" className="login-redirect">Click here</a> to login.</div>) : "" }
+                            </div>
                         </div>
                     </div>
                 )

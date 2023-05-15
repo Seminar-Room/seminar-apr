@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMessage } from "../../context/message-context";
@@ -6,7 +7,9 @@ import "./auth.css"
 
 export default function SignUp(props){
     const navigate = useNavigate();
-    var {displayMessage, setDisplayMessage} = useMessage("");
+    var {setDisplayMessage} = useMessage("");
+    const [collegeList, setCollegeList] = useState(props.colleges);
+    const [courseList, setCourseList] = useState(props.courses);
     const [userData, setUserData] = useState({
         name: "",
         email: props.email,
@@ -26,6 +29,7 @@ export default function SignUp(props){
       }
 
     const signUpUser = async (userInfo) => {
+        setDisplayMessage("Signing you up...")
         var response = await fetch("http://localhost:5000/api/sign-up", {
             method: "POST",
             body: JSON.stringify(userInfo),
@@ -33,8 +37,9 @@ export default function SignUp(props){
                 "Content-Type": "application/json",
               },
         }).then(result => result.json());
-        setDisplayMessage(response.message)
+        
         if(response.success === true){
+            setDisplayMessage(response.message)
             if(response.data){
                 localStorage.setItem("accessToken", response.data.accessToken)
                 localStorage.setItem("username", response.data.name)
@@ -44,9 +49,17 @@ export default function SignUp(props){
                 setDisplayMessage("");
                 navigate("/dashboard")
             }, 1000)
-           
         }
     }
+
+    // const getColleges = async() => {
+    //     var response = await fetch("http://localhost:5000/api/get-colleges").then(result => result.json());
+    //     setCollegeList(response.data)
+    // }
+
+    // useEffect(() => {
+    //     getColleges();
+    // }, [])
 
     return(
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -61,11 +74,25 @@ export default function SignUp(props){
                 </div>
                 <div className="auth-input-container">
                     <div className="auth-input-label">College:</div>
-                    <input className="auth-input" name="college"  type="text" onChange={handleFormChange} />
+                    <select className="auth-input" id="colleges" name="college" onChange={handleFormChange}>
+                        <option hidden default>Select</option>
+                        { collegeList && collegeList.map(college => {
+                            return (
+                                <option value={college.name} key={college._id}>{college.name}</option>
+                            )
+                        })}
+                    </select>
                 </div>
                 <div className="auth-input-container">
                     <div className="auth-input-label">Course:</div>
-                    <input className="auth-input" name="course"  type="text" onChange={handleFormChange} />
+                    <select className="auth-input" id="courses" name="course" onChange={handleFormChange} style={{width: '100%', paddingLeft:'1rem'}}>
+                        <option hidden default>Select</option>
+                        { courseList && courseList.map(course => {
+                            return (
+                                <option value={course.name} key={course._id}>{course.name}</option>
+                            )
+                        })}
+                    </select>
                 </div>
                 <div className="auth-input-container">
                     <div className="auth-input-label">Semester:</div>

@@ -14,10 +14,13 @@ export default function VerifyUser(){
     var password = useRef("");
     var [userResp, setUserResp] = useState(null);
     var {displayMessage, setDisplayMessage} = useMessage();
+    const [collegeList, setCollegeList] = useState(null);
+    const [courseList, setCourseList] = useState(null);
     var userState = localStorage.getItem("userState") ? localStorage.getItem("userState") : null;
     var accessToken = localStorage.getItem("accessToken") ? localStorage.getItem("accessToken") : null;
 
     const verifyUserEmail = async (emailId) => {
+        setDisplayMessage("Verifying email...")
         var response = await fetch("http://localhost:5000/api/verify-user", {
             method: "POST",
             body: JSON.stringify({email: emailId}),
@@ -35,6 +38,7 @@ export default function VerifyUser(){
     }
 
     const login = async (emailId, password) => {
+        setDisplayMessage("Logging In...")
         var response = await fetch("http://localhost:5000/api/login", {
             method: "POST",
             body: JSON.stringify({email: emailId, password: password}),
@@ -54,8 +58,28 @@ export default function VerifyUser(){
         }
         setDisplayMessage(response.message)
     }
+    const getColleges = async() => {
+        var response = await fetch("http://localhost:5000/api/get-colleges",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+        }).then(result => result.json());
+        setCollegeList(response.data)
+    }
+    const getCourses = async() => {
+        var response = await fetch("http://localhost:5000/api/get-courses",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+        });
+        response = await response.json();
+        setCourseList(response.data)
+    }
 
     useEffect(() => {
+        setDisplayMessage("")
         if(userState === 'ACTIVE' && accessToken){
             setDisplayMessage("Already Logged In!")
             setTimeout(() => {
@@ -63,6 +87,8 @@ export default function VerifyUser(){
                 navigate('/dashboard')
             }, 1000)
         }
+        getColleges();
+        getCourses();
     }, [])
 
     return (
@@ -108,7 +134,7 @@ export default function VerifyUser(){
                             
                         </div>
                     )
-                    : <SignUp email={userResp.email}/>): "" }
+                    : <SignUp email={userResp.email} colleges={collegeList} courses={courseList}/>): "" }
                 </div>
                 
            </div>
