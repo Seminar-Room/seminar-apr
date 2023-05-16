@@ -21,7 +21,7 @@ export default function VerifyUser(){
 
     const verifyUserEmail = async (emailId) => {
         setDisplayMessage("Verifying email...")
-        var response = await fetch("http://localhost:5000/api/verify-user", {
+        var response = await fetch("http://seminarroom.in:5000/api/verify-user", {
             method: "POST",
             body: JSON.stringify({email: emailId}),
             headers: {
@@ -39,7 +39,7 @@ export default function VerifyUser(){
 
     const login = async (emailId, password) => {
         setDisplayMessage("Logging In...")
-        var response = await fetch("http://localhost:5000/api/login", {
+        var response = await fetch("http://seminarroom.in:5000/api/login", {
             method: "POST",
             body: JSON.stringify({email: emailId, password: password}),
             headers: {
@@ -59,7 +59,7 @@ export default function VerifyUser(){
         setDisplayMessage(response.message)
     }
     const getColleges = async() => {
-        var response = await fetch("http://localhost:5000/api/get-colleges",{
+        var response = await fetch("http://seminarroom.in:5000/api/get-colleges",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export default function VerifyUser(){
         setCollegeList(response.data)
     }
     const getCourses = async() => {
-        var response = await fetch("http://localhost:5000/api/get-courses",{
+        var response = await fetch("http://seminarroom.in:5000/api/get-courses",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

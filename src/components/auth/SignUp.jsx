@@ -30,7 +30,7 @@ export default function SignUp(props){
 
     const signUpUser = async (userInfo) => {
         setDisplayMessage("Signing you up...")
-        var response = await fetch("http://localhost:5000/api/sign-up", {
+        var response = await fetch("http://seminarroom.in:5000/api/sign-up", {
             method: "POST",
             body: JSON.stringify(userInfo),
             headers: {
@@ -51,15 +51,6 @@ export default function SignUp(props){
             }, 1000)
         }
     }
-
-    // const getColleges = async() => {
-    //     var response = await fetch("http://localhost:5000/api/get-colleges").then(result => result.json());
-    //     setCollegeList(response.data)
-    // }
-
-    // useEffect(() => {
-    //     getColleges();
-    // }, [])
 
     return(
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>

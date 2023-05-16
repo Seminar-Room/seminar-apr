@@ -15,7 +15,7 @@ export default function Dashboard(){
     useEffect(() => {
         setDisplayMessage("Loading Available Sessions...")
          async function fetchSessions(){
-            var response = await fetch("http://localhost:5000/api/get-sessions", {
+            var response = await fetch("http://seminarroom.in:5000/api/get-sessions", {
                 method: "POST",
                 body: JSON.stringify({token: localStorage.getItem("accessToken")}),
                 headers: {
