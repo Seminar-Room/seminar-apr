@@ -1,11 +1,36 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router"
 import { useSession } from "../context/session-context";
+import { useUser } from "../context/user-context";
 
 export default function SessionCard(props){
     
     const {sessionStream, setSessionStream} = useSession();
+    const {userObj, setUserObj} = useUser();
     const navigate = useNavigate();
+
+    const logAttendance = async (userInfo, sessionInfo) => {
+
+        var date = new Date();
+        var currentDate = date.toLocaleDateString("en-GB");
+        var currentTime = date.toLocaleTimeString("en-US");
+        var attendanceObj = {
+            email: userInfo ? userInfo.email : localStorage.getItem("email"),
+            course: userInfo ? userInfo.course : localStorage.getItem("course"),
+            college: userInfo ? userInfo.college : localStorage.getItem("college"),
+            sessionId: sessionInfo._id,
+            sessionTitle: sessionInfo.title,
+            userJoinedAt: currentDate + " " + currentTime,
+        }
+
+        var response = await fetch("http://seminarroom.in:5000/api/attendance", {
+                method: "POST",
+                body: JSON.stringify(attendanceObj),
+                headers: {
+                    "Content-Type": "application/json",
+                  },
+            }).then(result => result.json())
+    }
 
     return(
         <div className="session-card-container">
@@ -20,10 +45,14 @@ export default function SessionCard(props){
             </div>
             <div className="session-prob">{props.sessionData.problemStatement}</div>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <button className="action-button-primary" onClick={() => {
+                { props.sessionData.feedbackEnabled === true ? (<button className="action-button-primary" onClick={() => {
+                    setSessionStream(props.sessionData)
+                    navigate(`/feedback/${props.sessionData._id}`)
+                }}>Feedback</button>) : (<button className="action-button-primary" onClick={() => {
+                    logAttendance(userObj, props.sessionData);
                     setSessionStream(props.sessionData)
                     navigate(`/session/${props.sessionData.sessionURL}`)
-                }}>Join Session</button>
+                }}>Join Session</button>)}
                 <div className="session-schedule">{props.sessionData.sessionDate}, {props.sessionData.sessionTime}</div>
             </div>
         </div>
