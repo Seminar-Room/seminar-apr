@@ -6,6 +6,7 @@ import "./auth.css"
 import logo from "../../assets/logo.png"
 import { useMessage } from "../../context/message-context";
 import { useEffect } from "react";
+import { useUser } from "../../context/user-context";
 
 
 export default function VerifyUser(){
@@ -16,6 +17,7 @@ export default function VerifyUser(){
     var {displayMessage, setDisplayMessage} = useMessage();
     const [collegeList, setCollegeList] = useState(null);
     const [courseList, setCourseList] = useState(null);
+    const {userObj, setUserObj} = useUser();
     var userState = localStorage.getItem("userState") ? localStorage.getItem("userState") : null;
     var accessToken = localStorage.getItem("accessToken") ? localStorage.getItem("accessToken") : null;
 
@@ -30,7 +32,6 @@ export default function VerifyUser(){
         }).then(result => result.json())
         if(response.data){
             setUserResp(response.data)
-            
             localStorage.setItem("username", response.data.name)
             localStorage.setItem("email", response.data.email)
         }
@@ -47,9 +48,12 @@ export default function VerifyUser(){
               },
         }).then(result => result.json())
         if(response.success === true){
+            setUserObj(response.data);
             if(response.data){
                 localStorage.setItem("accessToken", response.data.accessToken)
-                localStorage.setItem("userState", 'ACTIVE')
+                localStorage.setItem("userState", 'ACTIVE');
+                localStorage.setItem("college", response.data.college)
+                localStorage.setItem("course", response.data.course)
             }
             setTimeout(() => {
                 setDisplayMessage("");

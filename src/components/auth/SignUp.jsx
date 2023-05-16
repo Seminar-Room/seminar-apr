@@ -44,6 +44,8 @@ export default function SignUp(props){
                 localStorage.setItem("accessToken", response.data.accessToken)
                 localStorage.setItem("username", response.data.name)
                 localStorage.setItem("userState", 'ACTIVE')
+                localStorage.setItem("college", response.data.college)
+                localStorage.setItem("course", response.data.course)
             }
             setTimeout(() => {
                 setDisplayMessage("");

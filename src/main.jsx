@@ -9,22 +9,25 @@ import Feedback from './components/feedback/Feedback.jsx'
 import { SessionProvider } from './context/session-context.jsx';
 import SessionStream from './pages/SessionStream.jsx';
 import { MessageProvider } from './context/message-context.jsx';
+import { UserProvider } from './context/user-context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
     <Router>
-      <MessageProvider>
-        <SessionProvider>
-            <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="/login" element={<VerifyUser/>}/>
-              <Route path="/dashboard" element={<Dashboard/>}/>
-              <Route path="/session/:id" element={<SessionStream/>}/>
-              <Route path="/feedback" element={<Feedback/>}/>
-            </Routes>
-          </SessionProvider>
-      </MessageProvider>
+      <UserProvider>
+        <MessageProvider>
+          <SessionProvider>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/login" element={<VerifyUser/>}/>
+                <Route path="/dashboard" element={<Dashboard/>}/>
+                <Route path="/session/:id" element={<SessionStream/>}/>
+                <Route path="/feedback/:id" element={<Feedback/>}/>
+              </Routes>
+            </SessionProvider>
+        </MessageProvider>
+      </UserProvider>
     </Router>
     
   </React.StrictMode>,
