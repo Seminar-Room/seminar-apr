@@ -1,0 +1,125 @@
+
+/* input[type=text]:focus{
+    border: 2px solid rgba(123, 45, 111, 0.56);
+} */
+
+.page-container{
+    display: grid;
+    grid-template-rows: 0.8fr 4fr;
+}
+.navbar-regular{
+    background:rgba(123, 45, 111, 0.56);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;    
+}
+.nav-item{
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Avenir';
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+}
+.auth-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.verify-container{
+    display: flex;
+    gap: 2rem;
+
+}
+
+.auth-input-container{
+    display: flex;
+    border-radius: 2rem;
+    font-size: 1rem;
+    border: 2px solid rgba(123, 45, 111, 0.56);
+}
+
+.auth-input-label{
+    background-color:rgba(123, 45, 111, 0.56) ;
+    padding: 1rem;
+    border-radius: 2rem 0rem 0rem 2rem;
+    color: white;
+    font-weight: bold;
+    width: 5rem;
+}
+
+.auth-input{
+    border-radius: 0 2rem 2rem 0;
+    outline: none;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+}
+
+.action-button-primary{
+    border-color: white;
+    border-radius: 2rem;
+    color:white;
+    background-color: rgba(123, 45, 111, 0.56);
+    font-size: 0.9rem;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.action-button-secondary{
+    border-color: white;
+    border-radius: 2rem;
+    color:rgba(123, 45, 111, 0.56);
+    background-color: white ;
+    border: 1px solid rgba(123, 45, 111, 0.56);
+    font-size: 0.9rem;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.password-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+.sign-up-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+    align-content: center;
+}
+
+.alert {
+display: flex;
+border-radius: 2rem;
+width: fit-content;
+height: auto;
+padding: 1rem;
+margin: 1rem;
+gap: 1rem;
+}
+.alert-info {
+background-color: #fcd34d;
+color: #b45309;
+}
+.alert-message {
+font-size: 1rem;
+font-weight: bold;
+flex-grow: 1;
+}

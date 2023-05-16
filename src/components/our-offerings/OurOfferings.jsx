@@ -1,6 +1,6 @@
 import "./Ourofferings.css"
-import oneicon from "../assets/one.png"
-import twoicon from "../assets/coursec.png"
+import oneicon from "../../assets/one.png"
+import twoicon from "../../assets/coursec.png"
 export default function OurOfferings(){
     return(
         <>

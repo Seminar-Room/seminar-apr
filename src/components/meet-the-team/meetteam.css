@@ -65,7 +65,8 @@
     margin: 18px;
 }
 
-
- 
- 
- 
+.two {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}

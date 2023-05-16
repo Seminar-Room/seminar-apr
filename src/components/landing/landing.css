@@ -98,7 +98,7 @@
 .first-page .main-content{
     height: 70%;
     width: 40%;
-    font-size: 590%;
+    font-size: 5rem;
     font-weight: 600;
     color: white;
     line-height: 1;
@@ -109,13 +109,14 @@
     background: #FFC916;
     width: 237px;
     height: 80px;
-    border-color: #FFC916;
-    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1); */
+    border-color: #ffc916;
     border-radius: 49px;
     font-size: 18px;
-    color: #93329E;
-    font-weight: 800;
-    margin-top: 8%;
+    position: absolute;
+    top: 556px;
+    left: 151px;
+    color: #93329e;
+    font-weight: 800
 }
 
 .first-animation{
@@ -148,7 +149,7 @@
     height: 96px;
     top: 386px;
     left: 34px;
-    background-image: url("../assets/circle-bottom.png");
+    background-image: url("../../assets/circle-bottom.png");
     background-size: cover;
     z-index: 2;
 }

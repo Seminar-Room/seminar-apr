@@ -1,17 +1,17 @@
 import "./testimony.css"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import gt from "../assets/gt.png" 
-import surana from "../assets/surana.png" 
-import jain from "../assets/jain.png"
-import bhavani from "../assets/bhavani.png" 
-import naveen from "../assets/naveen.png"
+import gt from "../../assets/gt.png" 
+import surana from "../../assets/surana.png" 
+import jain from "../../assets/jain.png"
+import bhavani from "../../assets/bhavani.png" 
+import naveen from "../../assets/naveen.png"
 
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import director from "../assets/testimoney.png" ; 
+import director from "../../assets/testimoney.png" ; 
 
 export default function Testimony(){
     return(

@@ -98,21 +98,21 @@
 }
 
 #student-ellipse{
-    background-image: url("../assets/Student Ellipse.jpg");
+    background-image: url("../../assets/Student Ellipse.jpg");
     background-position: center;
     background-size: cover;
     transition: all 0.5s;
 }
 
 #college-ellipse{
-    background-image: url("../assets/College Ellipse.png");
+    background-image: url("../../assets/College Ellipse.png");
     background-position: center;
     background-size: cover;
     transition: all 0.5s;
 }
 
 #company-ellipse{
-    background-image: url("../assets/Company Ellipse.png");
+    background-image: url("../../assets/Company Ellipse.png");
     background-position: center;
     background-size: cover;
     transition: all 0.5s;
@@ -296,7 +296,7 @@
 }
 
 #student-1-img{
-    background: url("../assets/student-1.png");
+    background: url("../../assets/student-1.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -306,7 +306,7 @@
 }
 
 #student-2-img{
-    background: url("../assets/student-2.png");
+    background: url("../../assets/student-2.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -316,7 +316,7 @@
 }
 
 #student-3-img{
-    background: url("../assets/student-3.png");
+    background: url("../../assets/student-3.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -326,7 +326,7 @@
 }
 
 #company-1-img{
-    background: url("../assets/company-1.png");
+    background: url("../../assets/company-1.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -336,7 +336,7 @@
 }
 
 #company-2-img{
-    background: url("../assets/company-2.png");
+    background: url("../../assets/company-2.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -346,7 +346,7 @@
 }
 
 #company-5-img{
-    background: url("../assets/company-5.png");
+    background: url("../../assets/company-5.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -356,7 +356,7 @@
 }
 
 #college-5-img{
-    background: url("../assets/college-5.png");
+    background: url("../../assets/college-5.png");
     height: 60px;
     width: 60px;
     background-size: cover;
@@ -366,7 +366,7 @@
 }
 
 #college-6-img{
-    background: url("../assets/college-6.png");
+    background: url("../../assets/college-6.png");
     height: 60px;
     width: 60px;
     background-size: cover;

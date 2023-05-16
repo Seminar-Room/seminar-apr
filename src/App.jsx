@@ -1,12 +1,13 @@
 import './App.css'
-import Landing from './pages/Landing'
-import Whorwe from './pages/Whorwe'
-import OurOfferings from './pages/OurOfferings'
-import Benifits from './pages/Benifits'
-import Session from './pages/Sessions'
-import Meetteam from './pages/Meetteam'
-import Testimony from './pages/Testimony'
-import ContactUs from './pages/ContactUs'
+import Benifits from './components/benefits/Benifits'
+import ContactUs from './components/contact-us/ContactUs'
+import Landing from './components/landing/Landing'
+import Meetteam from './components/meet-the-team/Meetteam'
+import OurOfferings from './components/our-offerings/OurOfferings'
+import Session from './components/session/Sessions'
+import Testimony from './components/testimony/Testimony'
+import Whorwe from './components/who-are-we/Whorwe'
+
 
 function App() {
   

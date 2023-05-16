@@ -1,21 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import LoginPage from './pages/login.jsx'
-import Dashboard from './pages/Dashboard.jsx'
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SingupPage from './pages/signup.jsx'
+import VerifyUser from './components/auth/VerifyUser.jsx'
+import Dashboard from './components/dashboard/Dashboard.jsx'
+import Feedback from './components/feedback/Feedback.jsx'
+import { SessionProvider } from './context/session-context.jsx';
+import SessionStream from './pages/SessionStream.jsx';
+import { MessageProvider } from './context/message-context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    
     <Router>
-      <Routes>
-        <Route exact path="/" element={<App/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/signup" element={<SingupPage/>}/>
-      </Routes>
+      <MessageProvider>
+        <SessionProvider>
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/login" element={<VerifyUser/>}/>
+              <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="/session/:id" element={<SessionStream/>}/>
+              <Route path="/feedback" element={<Feedback/>}/>
+            </Routes>
+          </SessionProvider>
+      </MessageProvider>
     </Router>
+    
   </React.StrictMode>,
 )
