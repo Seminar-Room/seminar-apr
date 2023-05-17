@@ -45,10 +45,7 @@ export default function SessionCard(props){
             </div>
             <div className="session-prob">{props.sessionData.problemStatement}</div>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                { props.sessionData.feedbackEnabled === true ? (<button className="action-button-primary" onClick={() => {
-                    setSessionStream(props.sessionData)
-                    navigate(`/feedback/${props.sessionData._id}`)
-                }}>Feedback</button>) : (<button className="action-button-primary" onClick={() => {
+                { props.sessionData.feedbackEnabled === true ? (<a style={{textDecoration: "none"}} className="action-button-primary" target="_blank" rel="noreferrer" href={props.sessionData.feedbackURL}>Feedback</a>) : (<button className="action-button-primary" onClick={() => {
                     logAttendance(userObj, props.sessionData);
                     setSessionStream(props.sessionData)
                     navigate(`/session/${props.sessionData.sessionURL}`)

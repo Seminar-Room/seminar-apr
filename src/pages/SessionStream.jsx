@@ -55,9 +55,7 @@ export default function SessionStream(){
                                     <div className="session-speaker">{sessionStream && sessionStream.speaker && sessionStream.speaker.name}</div>
                                     <div className="session-speaker-sub">{sessionStream && sessionStream.speaker && sessionStream.speaker.designation}, {sessionStream && sessionStream.speaker &&  sessionStream.speaker.company}</div>
                                 </div>
-                                <button className="action-button-primary" onClick={() => {
-                                navigate(`/feedback/${sessionStream._id}`)
-                            }}>Feedback</button>
+                                { sessionStream.feedbackEnabled ? (<a style={{textDecoration: "none"}} className="action-button-primary" target="_blank" rel="noreferrer" href={sessionStream.feedbackURL}>Feedback</a>) : <div></div>}
                             </div>
                             <a className="action-button-primary" target="_blank" rel="noreferrer" href={sessionStream.vevoxURL} style={{textDecoration: 'none'}}>Vevox Chat</a>
                             </div>
