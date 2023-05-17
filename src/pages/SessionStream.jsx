@@ -13,7 +13,7 @@ export default function SessionStream(){
 
     useEffect( () => {
         async function fetchStream(streamId){
-            var response = await fetch("https://seminarroom.in:5000/api/get-stream-session", {
+            var response = await fetch("https://seminarroom.in/api/api/get-stream-session", {
                 method: "POST",
                 body: JSON.stringify({sessionURL: streamId}),
                 headers: {
