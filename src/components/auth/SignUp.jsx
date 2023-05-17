@@ -30,7 +30,7 @@ export default function SignUp(props){
 
     const signUpUser = async (userInfo) => {
         setDisplayMessage("Signing you up...")
-        var response = await fetch("http://seminarroom.in:5000/api/sign-up", {
+        var response = await fetch("https://seminarroom.in:5000/api/sign-up", {
             method: "POST",
             body: JSON.stringify(userInfo),
             headers: {

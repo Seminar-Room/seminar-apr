@@ -23,7 +23,7 @@ export default function SessionCard(props){
             userJoinedAt: currentDate + " " + currentTime,
         }
 
-        var response = await fetch("http://seminarroom.in:5000/api/attendance", {
+        var response = await fetch("https://seminarroom.in:5000/api/attendance", {
                 method: "POST",
                 body: JSON.stringify(attendanceObj),
                 headers: {

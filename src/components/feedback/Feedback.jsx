@@ -25,7 +25,7 @@ export default function Feedback(){
             sessionId: id,
             feedback: userFeedback,
         }
-        var response = await fetch("http://seminarroom.in:5000/api/feedback", {
+        var response = await fetch("https://seminarroom.in:5000/api/feedback", {
                 method: "POST",
                 body: JSON.stringify(feedbackObj),
                 headers: {
