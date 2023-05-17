@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="/login" element={<VerifyUser/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/session/:id" element={<SessionStream/>}/>
-                <Route path="/feedback/:id" element={<Feedback/>}/>
+                {/* <Route path="/feedback/:id" element={<Feedback/>}/> */}
               </Routes>
             </SessionProvider>
         </MessageProvider>
