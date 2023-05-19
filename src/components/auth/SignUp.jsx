@@ -28,6 +28,17 @@ export default function SignUp(props){
         });
       }
 
+      const getCourses = async() => {
+        var response = await fetch("https://seminarroom.in/api/api/get-courses",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+        });
+        response = await response.json();
+        setCourseList(response.data)
+    }
+
     const signUpUser = async (userInfo) => {
         setDisplayMessage("Signing you up...")
         var response = await fetch("https://seminarroom.in/api/api/sign-up", {
@@ -53,6 +64,10 @@ export default function SignUp(props){
             }, 1000)
         }
     }
+
+    useEffect(() => {
+        getCourses();
+    }, [])
 
     return(
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
