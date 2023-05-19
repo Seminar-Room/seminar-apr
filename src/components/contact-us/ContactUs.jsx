@@ -14,8 +14,9 @@ export default function ContactUs(){
                     <div className="contact-us-explore">
                         <h2>Explore</h2>
                         <a href="/">About Us</a><br/>
-                        <a href="/">Page 2</a><br/>
-                        <a href="/">Page 1</a>
+                        <a href="https://sites.google.com/seminarroom.in/seminarroom-terms-of-service/home" target="_blank" rel="noreferrer">Terms of Service</a><br/>
+                        <a href="https://sites.google.com/seminarroom.in/seminarroom-cancel-refund-pol/home"  target="_blank" rel="noreferrer">Cancel & Refund Policy</a><br/>
+                        <a href="https://sites.google.com/seminarroom.in/privacypolicy-seminarroom/home"  target="_blank" rel="noreferrer">Privacy Policy</a><br/>
                     </div>
                     <div className="contact-us-contact-us">
                         <h2>Contact Us</h2>
