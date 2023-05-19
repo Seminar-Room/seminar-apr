@@ -92,8 +92,11 @@ export default function VerifyUser(){
             }, 1000)
         }
         getColleges();
-        getCourses();
+        setTimeout(() => {
+            getCourses();
+        }, 500)
     }, [])
+
 
     return (
         <>
