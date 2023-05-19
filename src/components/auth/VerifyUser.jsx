@@ -71,16 +71,7 @@ export default function VerifyUser(){
         }).then(result => result.json());
         setCollegeList(response.data)
     }
-    const getCourses = async() => {
-        var response = await fetch("https://seminarroom.in/api/api/get-courses",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-              },
-        });
-        response = await response.json();
-        setCourseList(response.data)
-    }
+    
 
     useEffect(() => {
         setDisplayMessage("")
@@ -91,10 +82,7 @@ export default function VerifyUser(){
                 navigate('/dashboard')
             }, 1000)
         }
-        getColleges();
-        setTimeout(() => {
-            getCourses();
-        }, 500)
+        getColleges();        
     }, [])
 
 
