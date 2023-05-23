@@ -18,6 +18,24 @@ import bgposter from '../../assets/My Movie 2 2.png'
 import { useNavigate } from "react-router-dom";
 
 
+import pes from  "../../assets/pes.png"
+import ifim from "../../assets/ifim.png"
+import jainc from "../../assets/jaincollege.png"
+import mount from "../../assets/mount.png" 
+import kle from '../../assets/kle.png'
+import nitte from "../../assets/nitte.png" 
+import sage from '../../assets/sage.png'
+import naga from '../../assets/nagarjuna.png'
+import sur from '../../assets/surana.png'
+import gm from "../../assets/gt.png"
+import ew from "../../assets/eastwest.png" 
+import ari from "../../assets/arih.png"
+import amb from "../../assets/amb.png"
+import sri from "../../assets/sri.png"
+import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
+ 
+
 export default function Landing(){
     const navigate = useNavigate()
     // const responsive = {
@@ -67,13 +85,53 @@ export default function Landing(){
                 </div>
             </div>
             </div>
-      
-        {/* <AliceCarousel
-        mouseTracking
-        items={items}
-        responsive={responsive}
-        controlsStrategy="alternate"
-         /> */}
+            <div className="marq">
+                <Marquee speed={100}>
+                <div className="ele">
+                    <img className="pes" src={pes} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={ifim} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={jainc} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={mount} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={kle} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="nitte" src={nitte} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="nitte" src={sage} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={naga} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={sur} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={gm} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={ew} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={ari} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={amb} alt='logo'/>
+                </div>
+                <div className="ele">
+                    <img className="pes" src={sri} alt='logo'/>
+                </div>
+                </Marquee>
+
+            </div>
      
         </>
     )
