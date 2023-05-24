@@ -1,12 +1,11 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import logo from "../../assets/logo.png"
 import './feedback.css'
-import { useState } from "react";
-import { useUser } from "../../context/user-context";
-import { useMessage } from "../../context/message-context";
 import { useEffect } from "react";
-export default function Feedback(){
+export default function Innovation(){
     const {id} = useParams();
+    const navigate = useNavigate();
+    
     return(
         <div>
             <div className="navbar-regular">
@@ -21,7 +20,7 @@ export default function Feedback(){
             </div>
             <div style={{display:'flex', justifyContent: 'center', margin: '2rem'}}>
                 <div style={{display:'flex', flexDirection: 'column', alignItems:'center', width: '400px', gap: '2rem'}}>
-                    <div className="feedback-title">Feedback</div>
+                    <div className="feedback-title">Innovation Challenge</div>
                     <iframe src={`https://docs.google.com/forms/d/e/${id}/viewform?embedded=true`} width="640" height="1000" frameBorder="0" marginHeight="0" marginWidth="0">Loading…</iframe>
                 </div>
             </div>

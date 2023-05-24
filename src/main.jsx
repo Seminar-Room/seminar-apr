@@ -10,6 +10,7 @@ import { SessionProvider } from './context/session-context.jsx';
 import SessionStream from './pages/SessionStream.jsx';
 import { MessageProvider } from './context/message-context.jsx';
 import { UserProvider } from './context/user-context.jsx';
+import Innovation from './components/feedback/Innovation.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -23,7 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="/login" element={<VerifyUser/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/session/:id" element={<SessionStream/>}/>
-                {/* <Route path="/feedback/:id" element={<Feedback/>}/> */}
+                <Route path="/feedback/:id" element={<Feedback/>}/>
+                <Route path="/innovation-challenge/:id" element={<Innovation/>}/>
               </Routes>
             </SessionProvider>
         </MessageProvider>
