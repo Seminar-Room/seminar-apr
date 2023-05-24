@@ -57,12 +57,12 @@ body {
 }
 .swiper-button-prev ,.swiper-button-next{
    padding-left: 20px;
-   padding-right: 20px;
+   padding-right: 17px;
    padding-top: 10px;
    padding-bottom: 10px;
    background-color: #440A67;
-   border-radius: 50%;
-   color: white;
+   border-radius: 20%;
+    
 }
 .testcard{
     height: 300px; 
@@ -71,6 +71,7 @@ body {
     align-self: center;
     margin-left: 155px;
     border-radius: 20px;
+    margin-top: 100px;
     box-shadow: 3px 3px 8px grey;
 }
 .college{

@@ -1,6 +1,6 @@
 .meetbody{
     height: 550px ; 
-    background-color: rgb(157, 25, 157);
+    background-image: linear-gradient(135deg ,  #251A2B ,#FF29A8 );
     display: flex;
     flex-direction: row;
 }
@@ -29,7 +29,7 @@
     margin-left: 125px;
     margin-top: 0%;
     color: white; 
-    
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
     
 }
